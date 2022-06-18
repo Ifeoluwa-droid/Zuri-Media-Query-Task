@@ -29,11 +29,14 @@ submitBtn.addEventListener("click", (event) => {
         }
     });
 
-    if (allInputsFilled) {
+    if (allInputsFilled && /@[a-z]+.com$/.test(inputs[2].value)) {
+        console.log(true);
         inputs.forEach((input, i) => {
             input.value = "";
             input.placeholder = placeholders[i];
-        })}
+        })} else {
+            console.log(false);
+        }
 });
 
 inputs.forEach((input, i) => {
