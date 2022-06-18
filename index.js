@@ -10,6 +10,12 @@ submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
     inputs.forEach((input, i) => {
+        if (input.name === "email" && !/@[a-z]+.com$/.test(input.value)) {
+            input.classList.add("email-required");
+            input.placeholder = 'email@example.com';
+            warningTexts[i].classList.add("visible");  
+        }
+
         if (!input.value) {
             allInputsFilled = false;
             if (input.name === "email") {
@@ -33,7 +39,7 @@ submitBtn.addEventListener("click", (event) => {
 inputs.forEach((input, i) => {
     input.addEventListener("change", () => {
         if (input.value) {
-            if (input.name === "email") {
+            if (input.name === "email" && /@[a-z]+.com$/.test(input.value)) {
                 input.classList.remove("email-required");
                 input.placeholder = '';
             } else {

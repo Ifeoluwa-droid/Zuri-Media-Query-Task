@@ -136,10 +136,19 @@ form p {
 
 .required {
    outline: .08rem solid hsl(0, 100%, 74%);
+   background: url('./images/icon-error.svg');
+   background-repeat: no-repeat;
+   background-position: calc(100% - .8rem);
 }
 
 .email-required {
     outline: .08rem solid hsl(0, 100%, 74%);
+    background: url('./images/icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - .8rem);
+}
+
+.email-required::placeholder {
     color: hsl(0, 100%, 74%);
 }
 
